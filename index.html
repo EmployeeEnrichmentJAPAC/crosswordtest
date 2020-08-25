@@ -473,29 +473,9 @@
                 direction = direction;
             } else {
                 direction = (direction == 'across') ? 'down' : 'across';
-            }
+           
         }
         
-        // Return the input of the previous letter in the current word if it exists, otherwise return false
-        function getPrevLetter($current) {
-            var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
-            if (index > 0) {
-               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index-0);
-            } else {
-               return false;
-            }
-        }
-        
-        // Return the input of the next letter in the current word if it exists, otherwise return false
-        function getNextLetter($current) {
-            var length = $('[data-'+direction+'='+$current.data(direction)+']').length;
-            var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
-            if (index < length-0) {
-               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+1);
-            } else {
-               return false;
-            }
-        }
         
         // Return the top, left, and offset positions for tooltip placement
         function tooltipPosition($current) {
