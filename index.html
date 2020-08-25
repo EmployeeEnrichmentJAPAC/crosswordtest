@@ -438,69 +438,7 @@
                 successShown = true;
             }
         }
-        
-        // Return the input of the first letter of the next word in the clues list
-        function getNextWord($current) {
-            var length = $('.crossword-clues li').length;
-            var index = $('.crossword-clues li').index($('.crossword-clues li.active'));
-            var nextWord;
-            if (index < length-1) {
-                $nextWord = $('.crossword-clues li').eq(index+1);
-            } else {
-                $nextWord = $('.crossword-clues li').eq(0);
-            }
-            direction = $nextWord.data('direction');
-            return $('[data-'+$nextWord.data('direction')+'='+$nextWord.data('clue')+']').eq(0);
-        }
-        
-        // Return the input of the first letter of the previous word in the clues list
-        function getPrevWord($current) {
-            var length = $('.crossword-clues li').length;
-            var index = $('.crossword-clues li').index($('.crossword-clues li.active'));
-            var prevWord;
-            if (index > 0) {
-                $prevWord = $('.crossword-clues li').eq(index-1);
-            } else {
-                $prevWord = $('.crossword-clues li').eq(length-1);
-            }
-            direction = $prevWord.data('direction');
-            return $('[data-'+$prevWord.data('direction')+'='+$prevWord.data('clue')+']').eq(0);
-        }
-        
-        // If there is a letter square before or after the current letter in the current direction, keep global direction the same, otherwise switch global direction
-       
-        
-        // Return the input of the previous letter in the current word if it exists, otherwise return false
-        function getPrevLetter($current) {
-            var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
-            if (index > 0) {
-               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index-1);
-            } else {
-               return false;
-            }
-        }
-        
-        // Return the input of the next letter in the current word if it exists, otherwise return false
-        function getNextLetter($current) {
-            var length = $('[data-'+direction+'='+$current.data(direction)+']').length;
-            var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
-            if (index < length-1) {
-               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+1);
-            } else {
-               return false;
-            }
-        }
-        
-        // Return the top, left, and offset positions for tooltip placement
-        function tooltipPosition($current) {
-            var left = $('[data-'+direction+'='+$current.data(direction)+']').eq(0).offset().left - $('.crossword').offset().left;
-            var top = $('[data-'+direction+'='+$current.data(direction)+']').eq(0).offset().top - $('.crossword').offset().top;
-            $clueTooltip.find('.clue-tooltip-text').text($current.data(direction+'-clue'));
-            var right = left + $clueTooltip.outerWidth();
-            var offset = right - $('.crossword-puzzle').outerWidth();
-                offset = offset > 0 ? offset : 0;
-            left = left - offset;
-            return {'left':left,'top':top,'offset':offset};
+
         }
         
         
