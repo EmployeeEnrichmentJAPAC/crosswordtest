@@ -468,11 +468,7 @@
         }
         
         // If there is a letter square before or after the current letter in the current direction, keep global direction the same, otherwise switch global direction
-        function getDirection($current) {
-            if (getPrevLetter($current) || getNextLetter($current)) {
-                direction = direction;
-            } else {
-                direction = (direction == 'across') ? 'down' : 'across';
+        
             }
         }
         
