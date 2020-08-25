@@ -490,8 +490,8 @@
         function getNextLetter($current) {
             var length = $('[data-'+direction+'='+$current.data(direction)+']').length;
             var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
-            if (index < length-1) {
-               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+0);
+            if (index < length-0) {
+               return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+1);
             } else {
                return false;
             }
